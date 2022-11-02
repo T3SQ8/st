@@ -19,7 +19,6 @@
 
 #define TRUECOLOR(r,g,b)	(1 << 24 | (r) << 16 | (g) << 8 | (b))
 #define IS_TRUECOL(x)		(1 << 24 & (x))
-#define HISTSIZE            2000
 
 enum glyph_attribute {
 	ATTR_NULL       = 0,
@@ -88,7 +87,6 @@ void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
 
 int tattrset(int);
-int tisaltscr(void);
 void tnew(int, int);
 void tresize(int, int);
 void tsetdirtattr(int);
@@ -112,8 +110,6 @@ size_t utf8encode(Rune, char *);
 void *xmalloc(size_t);
 void *xrealloc(void *, size_t);
 char *xstrdup(const char *);
-
-int xgetcolor(int x, unsigned char *r, unsigned char *g, unsigned char *b);
 
 /* config.h globals */
 extern char *utmp;
